@@ -131,10 +131,11 @@ public class MainActivity extends AppCompatActivity implements  OnClickListener{
         if((user.getText().toString().isEmpty())||(pwd.getText().toString().isEmpty())){
 
             Toast.makeText(this, "不能为空，请重新输入", Toast.LENGTH_SHORT).show();
+            loginflag=2;
         }
 
 
-        if(loginflag!=1)
+        if(loginflag!=1&loginflag!=2)
         {
             Toast.makeText(this, "账号或者密码错误,请重新输入", Toast.LENGTH_SHORT).show();
         }

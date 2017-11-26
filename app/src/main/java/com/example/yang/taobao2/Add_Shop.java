@@ -1,56 +1,5 @@
 package com.example.yang.taobao2;
 
-
-/*import android.content.Intent;
-import android.support.design.widget.NavigationView;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-
-public class Add_Shop extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.shopadd);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Button confirm = findViewById(R.id.confirm);
-        Button cancel = findViewById(R.id.cancel);
-        toolbar.setTitle("淘宝");
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();;
-            }
-        });
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent =new Intent("android.intent.action.MAIN2");
-                startActivity(intent);
-            }
-        });
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent("android.intent.action.MAIN2");
-                startActivity(intent);
-            }
-        });
-    }
-    protected void onDestroy(){
-        super.onDestroy();
-    }
-}*/
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
@@ -80,19 +29,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-//public class Add_Shop extends AppCompatActivity implements View.OnClickListener {
-    /*private MySqliteHelper helper;
-
-    Button confirm;
-    Button cancel;
-    String  name;
-    String  img;
-    private EditText shopname;
-    private EditText image;
-    int nameflag ;//定义一个标示判断 店铺名是否存在*/
 public class Add_Shop extends AppCompatActivity {
     public static final int CHOOSE_PHOTO = 2;
     Button confirm;
@@ -110,7 +46,7 @@ public class Add_Shop extends AppCompatActivity {
         Button chooseFromAlbum = (Button) findViewById(R.id.choose_from_album);
         confirm = (Button) findViewById(R.id.confirm);
         cancel = (Button) findViewById(R.id.cancel);
-        EditText shopname = (EditText) findViewById(R.id.shopname);
+        shopname = (EditText) findViewById(R.id.shopname);
         picture = (ImageView) findViewById(R.id.picture);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -268,80 +204,3 @@ public class Add_Shop extends AppCompatActivity {
 
 }
 
-
-    /*public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.shopadd);
-
-        findViewById(R.id.confirm).setOnClickListener(this);
-        findViewById(R.id.cancel).setOnClickListener(this);
-        shopname = (EditText)findViewById(R.id.shopname);
-        image=(EditText)findViewById(R.id.shopimage);
-
-    }
-
-
-    public void  insert()
-    {
-
-
-        helper = new MySqliteHelper(getApplicationContext());
-        SQLiteDatabase db=helper.getWritableDatabase();    //建立打开可读可写的数据库实例
-
-
-
-        //查询一下，是否店铺名重复
-        String shop1 = "select * from name";
-        Cursor cursor = db.rawQuery(shop1, null);
-        while (cursor.moveToNext()) {
-            name =  cursor.getString(1); //获取第2列的值,第一列的索引从0开始
-            img = cursor.getString(2);//获取第3列的值
-
-            if((shopname.getText().toString().isEmpty())||(image.getText().toString().isEmpty())){
-
-                Toast.makeText(this, "不能为空，请重新输入", Toast.LENGTH_SHORT).show();
-                break;
-            }
-
-
-            nameflag = 1;  //不存在此店铺
-
-
-            if((shopname.getText().toString().equals(name)))
-            {
-                Toast.makeText(this, "已存在此店铺，请重新填写", Toast.LENGTH_SHORT).show();
-
-
-                nameflag =0;
-                break;
-            }
-
-        }
-
-        if(nameflag==1)
-        {
-            String shop2 = "insert into shops(name,img) values ('"+shopname.getText().toString()+"','"+image.getText().toString()+"')";
-            db.execSQL(shop2);
-            Toast.makeText(this, "增添成功！", Toast.LENGTH_SHORT).show();
-        }
-
-
-
-
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.confirm:
-                insert();
-                break;
-            case R.id.cancel:
-                Intent intent =new Intent("android.intent.action.MAIN2");
-                startActivity(intent);
-                break;
-        }
-    }
-
-}*/

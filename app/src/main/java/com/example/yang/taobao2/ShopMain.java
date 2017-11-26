@@ -80,6 +80,9 @@ public class ShopMain extends AppCompatActivity {
             case R.id.AddShop:
                 Intent intent=new Intent("android.intent.action.ADD");
                 startActivity(intent);break;
+            case R.id.MinusShop:
+                intent = new Intent("android.intent.action.MINUS");
+                startActivity(intent);break;
             case R.id.SearchOrder:
                 intent = new Intent("android.intent.action.Order");
                 startActivity(intent);break;
