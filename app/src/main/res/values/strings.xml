@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">淘宝</string>
+    <string name="person">个人资料</string>
+    <string name="shop">商铺</string>
+    <string name="good">商品</string>
+    <string name="car">购物车</string>
+    <string name="order">订单</string>
+    <string name="about">关于</string>
+    <string name="quit">退出登录</string>
+    <string name="other">其他</string>
+</resources>
