@@ -32,6 +32,13 @@ public class GoodAdapter extends RecyclerView.Adapter<GoodAdapter.ViewHolder>{
             cardView = (CardView) view;
             goodImage = (ImageView) view.findViewById(R.id.good_image);
             goodName = (TextView) view.findViewById(R.id.good_name);
+            goodImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent =new Intent("android.intent.action.Car");
+                    cardView .getContext() .startActivity(intent);
+                }
+            });
         }
     }
 
